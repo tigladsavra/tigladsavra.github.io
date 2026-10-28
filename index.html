@@ -3,44 +3,410 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tiglad Savra — Mechanical Engineering portfolio featuring CAD, design, fabrication, and systems projects." />
-  <title>Tiglad Savra | Engineering Portfolio</title>
+  <meta name="description" content="Tiglad Savra — mechanical engineering portfolio, resume, and engineering in action scrapbook." />
+  <title>Tiglad Savra | Mechanical Engineering Portfolio</title>
   <style>
-    :root{--ink:#102638;--navy:#174f7a;--blue:#2b75a8;--gold:#f0bf32;--paper:#f5f7f8;--line:#d8e1e7;--muted:#61717d}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-    a{color:inherit;text-decoration:none}.shell{max-width:1180px;margin:auto;padding:0 28px}.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.mark{font-weight:900;letter-spacing:.11em;font-size:15px}.mark span{display:block;color:var(--blue);font-size:9px;letter-spacing:.18em;margin-top:4px}.navlinks{display:flex;gap:24px;font-size:13px;color:var(--muted)}.navlinks a:hover{color:var(--blue)}
-    .hero{padding:88px 0 70px;background:linear-gradient(120deg,#edf4f8 0%,#fff 64%);border-bottom:1px solid var(--line)}.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(42px,7vw,82px);line-height:.98;letter-spacing:-.06em;margin:17px 0 20px;max-width:800px}.hero h1 em{color:var(--blue);font-style:normal}.hero p{font-size:18px;line-height:1.6;color:var(--muted);max-width:680px;margin:0}.hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}.button{padding:13px 18px;border-radius:5px;background:var(--navy);color:white;font-size:13px;font-weight:800;display:inline-flex;align-items:center;gap:8px}.button.secondary{background:white;color:var(--navy);border:1px solid var(--line)}.button:hover{transform:translateY(-1px);box-shadow:0 6px 16px #174f7a20}
-    .section{padding:64px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}.section h2{font-size:30px;letter-spacing:-.03em;margin:0}.section-intro{color:var(--muted);line-height:1.6;margin:8px 0 0;max-width:650px}.rule{height:5px;background:linear-gradient(90deg,var(--gold) 0 55px,var(--navy) 55px);margin:0 0 28px}
-    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 7px 20px #0b233112;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px #0b23311c}.card img{width:100%;aspect-ratio:1.294/1;object-fit:cover;object-position:top;display:block;background:#eef3f6}.card-body{padding:18px}.card-kicker{color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.card h3{font-size:19px;margin:7px 0 7px}.card p{font-size:13px;line-height:1.55;color:var(--muted);margin:0 0 15px}.card-link{color:var(--navy);font-size:12px;font-weight:900}.about{background:var(--navy);color:#fff}.about .section-intro{color:#cddce6}.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.skill{border:1px solid #ffffff33;border-radius:8px;padding:18px;background:#ffffff0c}.skill strong{display:block;color:#fff;margin-bottom:7px;font-size:14px}.skill span{font-size:12px;line-height:1.5;color:#cddce6}.footer{padding:30px 0;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line)}
-    .modal{display:none;position:fixed;inset:0;background:#06121de8;z-index:20;padding:30px;align-items:center;justify-content:center}.modal.open{display:flex}.modal-inner{max-width:1180px;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}.modal img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;box-shadow:0 20px 60px #0008}.close{position:absolute;right:0;top:0;color:#fff;border:1px solid #ffffff55;background:#ffffff16;border-radius:50%;width:38px;height:38px;font-size:24px;cursor:pointer}.modal-caption{color:#fff;font-size:13px;margin-top:12px}.page-nav{position:absolute;bottom:0;display:flex;gap:8px}.page-nav button{background:#ffffff18;border:1px solid #ffffff55;color:#fff;border-radius:4px;padding:8px 12px;cursor:pointer}
-    @media(max-width:800px){.navlinks{display:none}.hero{padding:62px 0 54px}.projects{grid-template-columns:repeat(2,1fr)}.skills{grid-template-columns:repeat(2,1fr)}.footer{display:block}.footer span{display:block;margin-top:8px}}
-    @media(max-width:520px){.shell{padding:0 17px}.projects{grid-template-columns:1fr}.hero h1{font-size:52px}.section{padding:48px 0}.skills{grid-template-columns:1fr}.modal{padding:12px}.modal img{max-height:calc(100vh - 100px)}}
+    :root {
+      --ink: #111820;
+      --navy-950: #070e16;
+      --navy-900: #0c1723;
+      --navy-800: #122338;
+      --navy-700: #1b3b5a;
+      --gold: #c8922f;
+      --gold-bright: #f1c766;
+      --paper: #f4efe4;
+      --paper-deep: #e7ddc9;
+      --muted: #78818a;
+      --line: rgba(255,255,255,.13);
+      --shadow: 0 24px 70px rgba(0,0,0,.3);
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: #f5f1e9;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(200,146,47,.12), transparent 28rem),
+        radial-gradient(circle at 100% 100%, rgba(31,74,111,.2), transparent 32rem),
+        var(--navy-950);
+      font-family: "Times New Roman", Times, serif;
+      line-height: 1.55;
+    }
+    body.modal-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 4px; }
+    .site-shell { width: min(1440px, calc(100% - 36px)); margin: 0 auto; }
+    .eyebrow {
+      color: var(--gold-bright);
+      font-size: .76rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .gold-rule { width: 66px; height: 5px; border-radius: 8px; background: var(--gold-bright); margin: 1rem 0 2rem; }
+    .muted { color: #bdc3c9; }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,14,22,.92);
+      backdrop-filter: blur(18px);
+    }
+    .header-inner {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 13px; min-width: 220px; border: 0; padding: 0; color: inherit; background: transparent; text-align: left; cursor: pointer; }
+    .brand-mark {
+      display: grid; place-items: center; width: 39px; height: 39px;
+      border: 1px solid var(--gold); color: var(--gold-bright); font-weight: 700;
+      letter-spacing: .08em; transform: rotate(-3deg);
+    }
+    .brand-name { display: block; font-size: 1.14rem; letter-spacing: .16em; font-weight: 700; }
+    .brand-sub { display: block; color: #aeb7bf; font-size: .69rem; letter-spacing: .17em; text-transform: uppercase; margin-top: 2px; }
+    .tab-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+    .tab-button {
+      appearance: none; border: 1px solid transparent; color: #cdd2d5; background: transparent;
+      border-radius: 999px; padding: .68rem 1rem; cursor: pointer; transition: .2s ease;
+      letter-spacing: .03em;
+    }
+    .tab-button:hover, .tab-button.active { color: var(--gold-bright); border-color: rgba(200,146,47,.5); background: rgba(200,146,47,.1); }
+
+    main { padding: 32px 0 70px; }
+    .page-view { display: none; animation: appear .35s ease both; }
+    .page-view.active { display: block; }
+    @keyframes appear { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .panel {
+      border: 1px solid var(--line); border-radius: 28px; background: rgba(19,31,45,.88);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .panel-pad { padding: clamp(28px, 5vw, 68px); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.6rem); line-height: .98; letter-spacing: -.035em; margin-bottom: 1.2rem; }
+    h2 { font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.03; margin-bottom: .4rem; }
+    h3 { line-height: 1.15; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 2rem; }
+    .button {
+      border: 1px solid var(--gold); color: var(--navy-950); background: var(--gold-bright);
+      border-radius: 7px; padding: .76rem 1.05rem; font-weight: 700; cursor: pointer;
+      transition: .2s ease; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,0,0,.23); }
+    .button.secondary { background: transparent; color: #f7f2e8; border-color: rgba(255,255,255,.25); }
+    .button.ghost { background: rgba(255,255,255,.08); color: #f7f2e8; border-color: rgba(255,255,255,.16); }
+    .button:disabled { cursor: not-allowed; opacity: .58; transform: none; }
+
+    /* About */
+    .about-layout { display: grid; grid-template-columns: 300px minmax(0,1fr); gap: 28px; align-items: start; }
+    .profile-card {
+      position: sticky; top: 111px; padding: 26px; border: 1px solid rgba(255,255,255,.15);
+      border-radius: 22px; background: rgba(5,11,18,.5); text-align: center;
+    }
+    .profile-card img { width: 156px; height: 178px; object-fit: cover; object-position: 50% 17%; border-radius: 18px; border: 4px solid #f0eadf; box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+    .profile-card h2 { font-size: 1.75rem; margin: 1.35rem 0 .35rem; }
+    .profile-title { display: inline-block; color: var(--gold-bright); border: 1px solid rgba(200,146,47,.48); border-radius: 99px; padding: .35rem .7rem; font-size: .95rem; }
+    .contact-list { border-top: 1px solid rgba(255,255,255,.14); margin-top: 1.5rem; padding-top: .7rem; text-align: left; }
+    .contact-item { display: grid; grid-template-columns: 34px 1fr; gap: 10px; padding: .8rem 0; }
+    .contact-icon { display: grid; place-items: center; color: var(--gold-bright); border: 1px solid rgba(200,146,47,.35); border-radius: 9px; height: 34px; }
+    .contact-label { display: inline-block; margin-right: .38rem; color: #8e99a3; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+    .contact-value { font-size: .98rem; color: #f3efe7; overflow-wrap: anywhere; }
+    .about-content { padding: clamp(28px, 5vw, 62px); }
+    .about-hero { display: grid; grid-template-columns: minmax(0,1fr) minmax(260px, 390px); gap: clamp(28px, 5vw, 60px); align-items: start; }
+    .about-copy { font-size: 1.17rem; color: #d3d7da; }
+    .about-copy p { margin-bottom: 1.65rem; max-width: 720px; }
+    .about-copy p:last-child { margin-bottom: 0; }
+    .about-copy strong { color: var(--gold-bright); font-weight: 700; }
+    .helicopter-frame { position: relative; transform: rotate(1.5deg); }
+    .helicopter-frame::before { content: none; }
+    .helicopter-frame img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border: 12px solid #e9e1d2; box-shadow: 10px 16px 0 rgba(200,146,47,.38), 0 20px 30px rgba(0,0,0,.3); }
+    .about-bottom { margin-top: 50px; border-top: 1px solid rgba(255,255,255,.13); padding-top: 28px; display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .interest-card { padding: 18px; background: rgba(255,255,255,.045); border-left: 4px solid var(--gold); }
+    .interest-card strong { color: var(--gold-bright); display: block; font-size: 1.06rem; margin-bottom: .35rem; }
+    .interest-card span { color: #b8c0c6; }
+
+    /* Resume */
+    .resume-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 34px; }
+    .resume-layout { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(280px,.65fr); gap: 22px; }
+    .resume-block { padding: 25px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.045); border-radius: 15px; }
+    .resume-block h3 { color: var(--gold-bright); margin-bottom: .75rem; font-size: 1.35rem; }
+    .skill-line { padding: .8rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .skill-line:last-child { border-bottom: 0; }
+    .skill-line strong { color: #fff4df; }
+    .resume-file { min-height: 240px; display: flex; flex-direction: column; justify-content: center; }
+    .resume-file code { color: var(--gold-bright); }
+    .timeline { border-left: 2px solid rgba(200,146,47,.55); margin: 1.3rem 0 0 .6rem; padding-left: 1.4rem; }
+    .timeline-item { position: relative; margin-bottom: 1.5rem; }
+    .timeline-item::before { content: ""; position: absolute; left: -1.9rem; top: .3rem; width: 11px; height: 11px; border-radius: 50%; background: var(--gold-bright); box-shadow: 0 0 0 5px rgba(200,146,47,.13); }
+    .timeline-item strong { display: block; color: #fff; }
+    .timeline-item span { color: #b9c2c8; }
+
+    /* Portfolio */
+    .portfolio-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; align-items: end; margin-bottom: 28px; }
+    .portfolio-toolbar p { color: #c3cbd0; max-width: 690px; margin-bottom: 0; }
+    .projects { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .project-card { border: 1px solid #d7cdbb; background: var(--paper); color: var(--ink); border-radius: 14px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.22); transition: .22s ease; cursor: pointer; }
+    .project-card:hover { transform: translateY(-6px) rotate(-.4deg); box-shadow: 0 18px 36px rgba(0,0,0,.32); }
+    .project-card img { width: 100%; aspect-ratio: 1.42 / 1; object-fit: cover; object-position: top; display: block; background: #e6edf0; border-bottom: 1px solid #d7cdbb; }
+    .project-body { padding: 17px 18px 20px; }
+    .project-kicker { color: #9b6d19; font-size: .72rem; text-transform: uppercase; letter-spacing: .15em; font-weight: 700; }
+    .project-body h3 { font-size: 1.35rem; margin: .45rem 0 .45rem; }
+    .project-body p { color: #4e5860; margin-bottom: .8rem; }
+    .project-link { color: #174365; font-weight: 700; }
+
+    /* Scrapbook */
+    .scrapbook-page { position: relative; background: #b98c55 url("assets/aged-graph-paper.png") center / cover fixed; color: #18212a; }
+    .scrapbook-page::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255,245,214,.55), transparent 35%, rgba(64,37,12,.18)); pointer-events: none; }
+    .scrapbook-inner { position: relative; padding: clamp(26px, 5vw, 62px); }
+    .scrapbook-heading { display: flex; justify-content: space-between; gap: 25px; align-items: end; margin-bottom: 34px; }
+    .scrapbook-heading h2 { color: #18212a; }
+    .scrapbook-heading .eyebrow { color: #6e4a1c; }
+    .scrapbook-heading p { color: #534330; max-width: 620px; margin-bottom: 0; }
+    .scrapbook-note { max-width: 520px; padding: 13px 17px; border: 1px solid rgba(79,52,25,.32); background: rgba(255,250,230,.58); box-shadow: 4px 5px 0 rgba(79,52,25,.16); transform: rotate(-1deg); }
+    .scrapbook-note strong { color: #6e4a1c; }
+    .scrapbook-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 25px 20px; align-items: start; }
+    .photo-card { grid-column: span 4; position: relative; padding: 13px 13px 16px; background: #f5efdf; border: 1px solid rgba(76,49,23,.32); box-shadow: 7px 11px 0 rgba(70,43,20,.2), 0 12px 24px rgba(58,35,13,.23); transform: rotate(var(--tilt, 0deg)); transition: .2s ease; }
+    .photo-card:hover { z-index: 4; transform: rotate(0deg) translateY(-7px) scale(1.015); box-shadow: 10px 17px 0 rgba(70,43,20,.2), 0 18px 30px rgba(58,35,13,.3); }
+    .photo-card.large { grid-column: span 6; }
+    .photo-card.tall { grid-column: span 3; }
+    .photo-card.cutout-card { background: rgba(246,239,220,.83); }
+    .photo-card img { width: 100%; height: 230px; object-fit: cover; display: block; filter: saturate(.88) contrast(1.03); }
+    .photo-card.large img { height: 300px; }
+    .photo-card.tall img { height: 285px; }
+    .photo-card .cutout { object-fit: contain; background: #ddd3c3; filter: saturate(.95) contrast(1.05); }
+    .photo-card figcaption { padding-top: 10px; color: #443723; font-size: .96rem; line-height: 1.35; }
+    .photo-card figcaption strong { display: block; color: #7a531c; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .25rem; }
+    .tape { position: absolute; z-index: 2; width: 92px; height: 27px; background: repeating-linear-gradient(90deg, rgba(244,235,205,.84) 0 12px, rgba(209,194,160,.68) 12px 15px), rgba(245,235,203,.8); border: 1px solid rgba(104,82,45,.27); box-shadow: 0 2px 2px rgba(58,35,13,.15); opacity: .86; mix-blend-mode: multiply; }
+    .tape::after { content: ""; position: absolute; inset: 3px 8px; border-top: 1px dashed rgba(90,70,39,.3); border-bottom: 1px dashed rgba(90,70,39,.2); }
+    .tape.a { top: -14px; left: 18%; transform: rotate(-6deg); }
+    .tape.b { top: -11px; right: 15%; transform: rotate(7deg); }
+    .tape.c { bottom: 47px; left: -22px; transform: rotate(-74deg); width: 74px; }
+    .scrapbook-footer-note { margin: 34px auto 0; width: fit-content; color: #5b4325; font-style: italic; font-size: 1.05rem; }
+
+    /* Address */
+    .address-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 24px; }
+    .address-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 5vw, 60px); }
+    .address-copy h2 { margin-bottom: 1rem; }
+    .address-card { margin-top: 1.5rem; padding: 18px; border: 1px solid rgba(200,146,47,.45); border-radius: 13px; background: rgba(0,0,0,.2); }
+    .address-card strong { display: block; color: var(--gold-bright); font-size: 1.25rem; }
+    .address-card span { color: #c6cdd1; }
+    .map-wrap { position: relative; min-height: 540px; overflow: hidden; border: 1px solid rgba(200,146,47,.42); background: #202426; }
+    .map-wrap iframe { width: 100%; height: 100%; min-height: 540px; border: 0; filter: grayscale(.92) sepia(.22) hue-rotate(164deg) saturate(.72) contrast(1.12) brightness(.78); }
+    .map-wrap::after { content: ""; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 0 2px rgba(200,146,47,.3), inset 0 0 90px rgba(10,15,20,.42); }
+    .map-label { position: absolute; z-index: 2; top: 24px; left: 24px; padding: 15px 18px; background: rgba(8,14,20,.9); border-left: 4px solid var(--gold-bright); box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+    .map-label strong { display: block; color: #fff4de; font-size: 1.25rem; }
+    .map-label span { color: #bac2c7; }
+    .map-link { display: inline-block; margin-top: 10px; color: var(--gold-bright); font-weight: 700; }
+
+    footer { color: #93a0aa; text-align: center; padding: 0 0 32px; font-size: .9rem; }
+
+    /* Viewer */
+    .viewer { position: fixed; inset: 0; z-index: 100; display: none; background: rgba(3,8,13,.94); padding: 22px; }
+    .viewer.open { display: flex; align-items: center; justify-content: center; }
+    .viewer-box { width: min(1200px, 100%); height: min(94vh, 900px); display: flex; flex-direction: column; align-items: center; position: relative; }
+    .viewer img { max-width: 100%; max-height: calc(100% - 108px); object-fit: contain; transform-origin: center; box-shadow: 0 25px 70px rgba(0,0,0,.55); transition: transform .18s ease; }
+    .viewer-close { position: absolute; top: -3px; right: 0; width: 42px; height: 42px; border-radius: 50%; color: #fff; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.35); font-size: 1.7rem; cursor: pointer; }
+    .viewer-caption { margin-top: 10px; color: #d7dde0; }
+    .viewer-controls { margin-top: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; padding-top: 13px; }
+    .viewer-controls button, .viewer-controls a { padding: .6rem .82rem; border-radius: 5px; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.09); color: #fff; cursor: pointer; }
+    .viewer-controls button:hover, .viewer-controls a:hover { border-color: var(--gold-bright); color: var(--gold-bright); }
+
+    @media (max-width: 1000px) {
+      .header-inner { align-items: flex-start; padding: 14px 0; flex-direction: column; }
+      .tab-nav { justify-content: flex-start; }
+      .profile-card { position: static; }
+      .about-layout, .address-layout { grid-template-columns: 1fr; }
+      .about-hero { grid-template-columns: 1fr; }
+      .helicopter-frame { max-width: 480px; margin: 0 auto; }
+      .projects { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .resume-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .site-shell { width: min(100% - 20px, 1440px); }
+      main { padding-top: 12px; }
+      .panel { border-radius: 18px; }
+      .panel-pad, .about-content, .scrapbook-inner { padding: 25px 19px; }
+      .tab-button { padding: .55rem .66rem; font-size: .9rem; }
+      .brand-name { font-size: 1rem; }
+      .projects { grid-template-columns: 1fr; }
+      .about-bottom { grid-template-columns: 1fr; }
+      .scrapbook-heading { display: block; }
+      .scrapbook-note { margin-top: 22px; }
+      .scrapbook-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px 13px; }
+      .photo-card, .photo-card.large, .photo-card.tall { grid-column: span 1; }
+      .photo-card img, .photo-card.large img, .photo-card.tall img { height: 190px; }
+      .photo-card.large { grid-row: span 1; }
+      .map-wrap, .map-wrap iframe { min-height: 430px; }
+    }
   </style>
 </head>
 <body>
-  <header class="topbar"><div class="shell nav"><a class="mark" href="#top">TIGLAD SAVRA<span>MECHANICAL ENGINEERING</span></a><nav class="navlinks"><a href="#projects">Projects</a><a href="#approach">Approach</a><a href="Tiglad_Savra_Engineering_Portfolio.pdf" download>Download PDF</a></nav></div></header>
-  <main id="top">
-    <section class="hero"><div class="shell"><div class="eyebrow">Mechanical Engineer · San Jose State University</div><h1>Designing ideas into <em>working systems.</em></h1><p>A visual portfolio of hands-on mechanical design, CAD development, technical drawings, fabrication, and engineering systems work.</p><div class="hero-actions"><a class="button" href="#projects">Explore projects <span>↓</span></a><a class="button secondary" href="Tiglad_Savra_Engineering_Portfolio.pdf" download>Download portfolio PDF ↗</a></div></div></section>
-    <section class="section" id="projects"><div class="shell"><div class="section-head"><div><div class="eyebrow">Selected work</div><h2>Engineering portfolio</h2><p class="section-intro">Browse the portfolio page by page, or open any preview for a closer look. Each project combines design intent, technical communication, and a tangible result.</p></div></div><div class="rule"></div><div class="projects">
-      <article class="card"><img src="assets/page-1.png" alt="Mini mailbox design project preview"><div class="card-body"><div class="card-kicker">01 · Design + Graphics</div><h3>Mini Mailbox</h3><p>Sheet-metal and wood drawings developed into a finished physical product.</p><a class="card-link" href="#" data-page="1">View project →</a></div></article>
-      <article class="card"><img src="assets/page-2.png" alt="Wall mounted hanger project preview"><div class="card-body"><div class="card-kicker">02 · Fabrication</div><h3>Wall-Mounted Hanger</h3><p>Lathe and mill part drawings, exploded assembly documentation, and final product.</p><a class="card-link" href="#" data-page="2">View project →</a></div></article>
-      <article class="card"><img src="assets/page-3.png" alt="Mobile robot project preview"><div class="card-body"><div class="card-kicker">03 · Engineering introduction</div><h3>Mobile Robot</h3><p>Applied design and prototyping work focused on mechanisms, structure, and integration.</p><a class="card-link" href="#" data-page="3">View project →</a></div></article>
-      <article class="card"><img src="assets/page-4.png" alt="Mailbox drawing project preview"><div class="card-body"><div class="card-kicker">04 · Technical drawing</div><h3>Mailbox Detail Drawings</h3><p>Dimensioned drawings communicating the geometry and assembly of a mailbox design.</p><a class="card-link" href="#" data-page="4">View project →</a></div></article>
-      <article class="card"><img src="assets/page-5.png" alt="Wall mounted hanger technical drawing preview"><div class="card-body"><div class="card-kicker">05 · Mechanical design</div><h3>Hanger Assembly</h3><p>Manufacturing-focused drawings and component-level design for a wall-mounted assembly.</p><a class="card-link" href="#" data-page="5">View project →</a></div></article>
-      <article class="card"><img src="assets/page-6.png" alt="Reaction game electronics project preview"><div class="card-body"><div class="card-kicker">06 · Systems project</div><h3>Reaction Game</h3><p>A hands-on mechatronics project connecting hardware, code, and user interaction.</p><a class="card-link" href="#" data-page="6">View project →</a></div></article>
-      <article class="card"><img src="assets/page-7.png" alt="Wireless charging research poster preview"><div class="card-body"><div class="card-kicker">07 · Research + communication</div><h3>Wireless Charging</h3><p>Research communication exploring electromagnetic energy transfer and vehicle-scale charging.</p><a class="card-link" href="#" data-page="7">View project →</a></div></article>
-      <article class="card"><img src="assets/page-8.png" alt="Handle assembly design project preview"><div class="card-body"><div class="card-kicker">08 · CAD + graphics</div><h3>Handle Assembly</h3><p>Assembly modeling and component design presented through technical visuals and a final concept.</p><a class="card-link" href="#" data-page="8">View project →</a></div></article>
-      <article class="card"><img src="assets/page-9.png" alt="Portfolio project page preview"><div class="card-body"><div class="card-kicker">09 · Portfolio</div><h3>Additional Work</h3><p>Continue through the final portfolio page for a complete view of the work.</p><a class="card-link" href="#" data-page="9">View page →</a></div></article>
-    </div></div></section>
-    <section class="section about" id="approach"><div class="shell"><div class="eyebrow" style="color:#f0bf32">Engineering approach</div><h2>From concept to communication.</h2><p class="section-intro">My work emphasizes the full design process: understanding the problem, developing a solution, communicating it clearly, and building toward a reliable result. I am especially interested in manufacturing, engineering systems, and the components that make products work.</p><div class="skills"><div class="skill"><strong>CAD + Drawing</strong><span>Part modeling, assemblies, dimensioned drawings, and clear technical communication.</span></div><div class="skill"><strong>Hands-on Design</strong><span>Physical prototyping, fabrication, iteration, and learning from the finished result.</span></div><div class="skill"><strong>Systems Thinking</strong><span>Connecting mechanisms, electronics, software, and user needs into one working system.</span></div><div class="skill"><strong>Professional Growth</strong><span>Building the practical judgment, precision, and collaboration expected of a mechanical engineer.</span></div></div></div></section>
+  <header class="site-header">
+    <div class="site-shell header-inner">
+      <button class="brand" type="button" data-view-target="about" aria-label="Open About page">
+        <span class="brand-mark">TS</span>
+        <span><span class="brand-name">TIGLAD SAVRA</span><span class="brand-sub">Mechanical Engineering Portfolio</span></span>
+      </button>
+      <nav class="tab-nav" aria-label="Main navigation">
+        <button class="tab-button active" type="button" data-view-target="about">About</button>
+        <button class="tab-button" type="button" data-view-target="resume">Resume</button>
+        <button class="tab-button" type="button" data-view-target="portfolio">Portfolio</button>
+        <button class="tab-button" type="button" data-view-target="engineering">Engineering in Action</button>
+        <button class="tab-button" type="button" data-view-target="address">Address</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-shell">
+    <section class="page-view active" id="about" aria-labelledby="about-title">
+      <div class="panel">
+        <div class="about-layout">
+          <aside class="profile-card">
+            <img src="assets/formal-portrait.jpg" alt="Formal portrait of Tiglad Savra" />
+            <h2>Tiglad Savra</h2>
+            <span class="profile-title">Mechanical Engineering Student</span>
+            <div class="contact-list">
+              <div class="contact-item"><span class="contact-icon">✉</span><span><span class="contact-label">Email:</span><span class="contact-value">tigladsavra@gmail.com</span></span></div>
+              <div class="contact-item"><span class="contact-icon">⌖</span><span><span class="contact-label">Location:</span><span class="contact-value">San Jose, California, USA</span></span></div>
+            </div>
+          </aside>
+          <div class="about-content">
+            <div class="eyebrow">Personal statement</div>
+            <h1 id="about-title">About Me</h1>
+            <div class="gold-rule"></div>
+            <div class="about-hero">
+              <div class="about-copy">
+                <p>Hello, my name is Tiglad Savra, and I am a <strong>mechanical engineering student</strong> at <strong>San José State University</strong>. I am interested in the relationship between <strong>design</strong>, <strong>manufacturing</strong>, and the <strong>mechanical systems</strong> that allow products to function reliably.</p>
+                <p>Through my academic and hands-on engineering projects, I have developed experience with <strong>technical drawings</strong>, <strong>CAD-based design</strong>, <strong>fabrication</strong>, <strong>machining</strong>, <strong>prototyping</strong>, and <strong>assembly</strong>. I enjoy taking an initial concept and developing it into a physical result that can be tested, evaluated, and improved.</p>
+                <p>My interests include <strong>manufacturing</strong>, <strong>engineering systems</strong>, <strong>mechanical components</strong>, and <strong>design development</strong>. I am especially motivated by the process of understanding how individual parts work together within a larger system. Each project has strengthened my <strong>attention to detail</strong>, <strong>problem-solving ability</strong>, <strong>technical communication</strong>, and <strong>confidence working through unfamiliar challenges</strong>.</p>
+                <p>As I continue developing as an engineer, I am building both my technical knowledge and professional experience. This portfolio documents my progress, creativity, and approach to engineering: combining careful design with hands-on work to turn ideas into <strong>functional solutions</strong>.</p>
+              </div>
+              <div class="helicopter-frame"><img src="assets/helicopter.jpg" alt="Tiglad Savra beside a helicopter during an engineering experience" /></div>
+            </div>
+            <div class="about-bottom">
+              <div class="interest-card"><strong>Design → Build</strong><span>Turning sketches and models into tested, physical results.</span></div>
+              <div class="interest-card"><strong>Systems Thinking</strong><span>Connecting components, mechanisms, materials, and user needs.</span></div>
+              <div class="interest-card"><strong>Hands-on Learning</strong><span>Using fabrication and iteration to improve engineering judgment.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-view" id="resume" aria-labelledby="resume-title" hidden>
+      <div class="panel panel-pad">
+        <div class="resume-head"><div><div class="eyebrow">Professional profile</div><h1 id="resume-title">Resume</h1><div class="gold-rule"></div></div><span class="muted">Mechanical Engineering · San José State University</span></div>
+        <div class="resume-layout">
+          <div>
+            <div class="resume-block"><h3>Technical Skills</h3><div class="skill-line"><strong>Design + CAD:</strong> SolidWorks, assemblies, dimensioned technical drawings, tolerancing, and design development.</div><div class="skill-line"><strong>Fabrication:</strong> machining, sheet-metal work, woodworking, 3D printing, soldering, fit-up, and hands-on prototyping.</div><div class="skill-line"><strong>Systems + Programming:</strong> Python, CircuitPython, embedded control, sensors, motors, electronics, and iterative debugging.</div><div class="skill-line"><strong>Engineering Practice:</strong> manufacturing communication, problem-solving, collaboration, testing, documentation, and attention to detail.</div></div>
+            <div class="resume-block" style="margin-top:22px"><h3>Education</h3><div class="timeline"><div class="timeline-item"><strong>San José State University</strong><span>Mechanical Engineering student</span></div><div class="timeline-item"><strong>Selected academic work</strong><span>Design and graphics · Introduction to engineering · Computer applications · Physics: electricity and magnetism</span></div></div></div>
+          </div>
+          <aside class="resume-block resume-file"><h3>Resume PDF</h3><p class="muted">Download my current resume for a concise overview of my education, technical skills, and engineering experience.</p><a class="button" href="assets/Tiglad_Savra_Resume.pdf" download>Download Resume PDF ↓</a><p class="muted" style="margin:1rem 0 0;font-size:.9rem">The portfolio PDF is available separately through the Portfolio tab.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-view" id="portfolio" aria-labelledby="portfolio-title" hidden>
+      <div class="panel panel-pad">
+        <div class="portfolio-toolbar"><div><div class="eyebrow">Selected work · 01—09</div><h1 id="portfolio-title">Portfolio</h1><p>Open any project to view its complete page, zoom in, print the page, or move through the portfolio with the arrow controls.</p></div><a class="button" href="Tiglad_Savra_Engineering_Portfolio.pdf" target="_blank" rel="noreferrer">Open full PDF ↗</a></div>
+        <div class="projects">
+          <article class="project-card" data-page="1" tabindex="0"><img src="assets/page-1.png" alt="TigTray steering-wheel-mounted food tray project page"><div class="project-body"><div class="project-kicker">01 · Design + Graphics</div><h3>TigTray</h3><p>Steering-wheel-mounted food tray developed from concept sketches through CAD, 3D printing, and verification.</p><span class="project-link">View project →</span></div></article>
+          <article class="project-card" data-page="2" tabindex="0"><img src="assets/page-2.png" alt="Wind turbine engineering project page"><div class="project-body"><div class="project-kicker">02 · Introduction to Engineering</div><h3>Wind Turbine</h3><p>Adjustable three-blade turbine system combining rotor geometry, a tripod platform, and electrical output.</p><span class="project-link">View project →</span></div></article>
+          <article class="project-card" data-page="3" tabindex="0"><img src="assets/page-3.png" alt="Mobile robot engineering project page"><div class="project-body"><div class="project-kicker">03 · Introduction to Engineering</div><h3>Mobile Robot</h3><p>Portable robot integrating mechanical design, an IR board, motors, sensors, and timed motion control.</p><span class="project-link">View project →</span></div></article>
+          <article class="project-card" data-page="4" tabindex="0"><img src="assets/page-4.png" alt="Mini mailbox design project page"><div class="project-body"><div class="project-kicker">04 · Mechanical Design</div><h3>Mini Mailbox</h3><p>Miniature hinged-door mailbox combining formed sheet metal, woodworking, and toleranced hand drawings.</p><span class="project-link">View project →</span></div></article>
+          <article class="project-card" data-page="5" tabindex="0"><img src="assets/page-5.png" alt="Wall mounted hanger project page"><div class="project-body"><div class="project-kicker">05 · Fabrication</div><h3>Wall-Mounted Hanger</h3><p>Aluminum hanger assembled from a lathe-turned peg and milled mounting plate using shop-floor drawings.</p><span class="project-link">View project →</span></div></article>
+          <article class="project-card" data-page="6" tabindex="0"><img src="assets/page-6.png" alt="Toyota Scion FR-S X-pipe exhaust modification project page"><div class="project-body"><div class="project-kicker">06 · Personal Project</div><h3>Toyota Scion FR-S X-Pipe Exhaust Modification</h3><p>Hands-on vehicle-system modification involving disassembly, fit-up, clearance checking, and fabrication.</p><span class="project-link">View project →</span></div></article>
+          <article class="project-card" data-page="7" tabindex="0"><img src="assets/page-7.png" alt="Reaction game computer applications project page"><div class="project-body"><div class="project-kicker">07 · Computer Applications</div><h3>Reaction Game</h3><p>Python and CircuitPython project connecting real-time LEDs, buttons, audio feedback, and control logic.</p><span class="project-link">View project →</span></div></article>
+          <article class="project-card" data-page="8" tabindex="0"><img src="assets/page-8.png" alt="Wireless charging physics project page"><div class="project-body"><div class="project-kicker">08 · Physics + Communication</div><h3>Wireless Charging</h3><p>Electromagnetic energy-transfer project exploring coil design, thermal control, and vehicle-scale applications.</p><span class="project-link">View project →</span></div></article>
+          <article class="project-card" data-page="9" tabindex="0"><img src="assets/page-9.png" alt="Door handle assembly design project page"><div class="project-body"><div class="project-kicker">09 · Design + Graphics</div><h3>Door Handle Assembly</h3><p>Multi-piece SolidWorks assembly developed with mating, tolerancing, dimensional fit, and 3D-printed testing.</p><span class="project-link">View project →</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-view" id="engineering" aria-labelledby="engineering-title" hidden>
+      <div class="panel scrapbook-page">
+        <div class="scrapbook-inner">
+          <div class="scrapbook-heading"><div><div class="eyebrow">Workshop archive</div><h1 id="engineering-title">Engineering in Action</h1><p>A living scrapbook of building, testing, collaborating, and learning through hands-on engineering work.</p></div></div>
+          <div class="scrapbook-grid">
+            <figure class="photo-card large" style="--tilt:-2.4deg"><span class="tape a"></span><span class="tape b"></span><img src="assets/mobile-robot-action.jpg" alt="Tiglad Savra collaborating on a mobile robot assembly"><figcaption><strong>Mechatronics + collaboration</strong>Assembling and testing a mobile robot platform with a teammate.</figcaption></figure>
+            <figure class="photo-card" style="--tilt:2.8deg"><span class="tape a"></span><img src="assets/tripod-build.jpg" alt="Tiglad Savra working on a tripod-mounted engineering prototype"><figcaption><strong>Wind turbine prototype</strong>Hands-on work on the adjustable tripod-based turbine system.</figcaption></figure>
+            <figure class="photo-card tall" style="--tilt:-4.7deg"><span class="tape b"></span><img src="assets/machining-lab.jpg" alt="Tiglad Savra building a tripod-mounted prototype"><figcaption><strong>Prototype construction</strong>Building and checking the tripod-mounted prototype during hands-on workshop work.</figcaption></figure>
+            <figure class="photo-card cutout-card" style="--tilt:3.4deg"><span class="tape a"></span><span class="tape c"></span><img class="cutout" src="assets/turbine-cutout.png" alt="Two isolated 3D-printed wind turbine blade assemblies"><figcaption><strong>Prototype detail</strong>3D-printed blade assemblies, isolated as a visual study.</figcaption></figure>
+            <figure class="photo-card large" style="--tilt:1.8deg"><span class="tape a"></span><img src="assets/design-board.jpg" alt="CNC machining work in a machine shop"><figcaption><strong>CNC machining efforts</strong>Hands-on CNC machining efforts documented in the machine shop.</figcaption></figure>
+            <figure class="photo-card" style="--tilt:-3.5deg"><span class="tape b"></span><img src="assets/sketches.jpg" alt="Hand-drawn automotive interior concept sketch"><figcaption><strong>Sketching + ideation</strong>Hand-drawn concepts showing how observation becomes a design direction.</figcaption></figure>
+            <figure class="photo-card" style="--tilt:4deg"><span class="tape a"></span><img src="assets/turbine-blades.jpg" alt="Two wind turbine blade prototypes on a work surface"><figcaption><strong>Material study</strong>Comparing blade prototypes before the background was removed for a cleaner study.</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-view" id="address" aria-labelledby="address-title" hidden>
+      <div class="panel address-layout">
+        <div class="address-copy"><div class="eyebrow">General location</div><h1 id="address-title">San Jose</h1><div class="gold-rule"></div><p class="muted">My engineering work and studies are based in San Jose, California. Use the map to explore the area or open it directly in Google Maps.</p><div class="address-card"><strong>San Jose, California</strong><span>United States</span><br><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=San+Jose%2C+California" target="_blank" rel="noreferrer">Open in Google Maps ↗</a></div></div>
+        <div class="map-wrap"><div class="map-label"><strong>San Jose</strong><span>California, USA</span></div><iframe title="Interactive map of San Jose, California" loading="lazy" src="https://www.google.com/maps?q=San+Jose%2C+California&amp;output=embed"></iframe></div>
+      </div>
+    </section>
   </main>
-  <footer class="shell footer"><span>© 2026 Tiglad Savra</span><span>Mechanical Engineering · San Jose State University</span></footer>
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Portfolio page viewer"><div class="modal-inner"><button class="close" id="close" aria-label="Close viewer">×</button><img id="modal-img" src="" alt="Expanded portfolio page"><div class="modal-caption" id="caption"></div><div class="page-nav"><button id="prev">← Previous</button><button id="next">Next →</button></div></div></div>
+
+  <footer class="site-shell">© 2026 Tiglad Savra · Mechanical Engineering · San Jose State University</footer>
+
+  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Portfolio page viewer">
+    <div class="viewer-box"><button class="viewer-close" id="viewer-close" aria-label="Close portfolio viewer">×</button><img id="viewer-img" src="" alt="Expanded portfolio page" /><div class="viewer-caption" id="viewer-caption"></div><div class="viewer-controls"><button type="button" id="viewer-prev">← Previous</button><button type="button" id="viewer-next">Next →</button><button type="button" id="zoom-out">− Zoom out</button><button type="button" id="zoom-in">+ Zoom in</button><button type="button" id="print-page">Print page</button><a href="Tiglad_Savra_Engineering_Portfolio.pdf" target="_blank" rel="noreferrer">Open full PDF</a></div></div>
+  </div>
+
   <script>
-    const modal=document.getElementById('modal'), img=document.getElementById('modal-img'), caption=document.getElementById('caption');let current=1;
-    function show(n){current=Math.max(1,Math.min(9,n));img.src=`assets/page-${current}.png`;caption.textContent=`Portfolio page ${current} of 9`;modal.classList.add('open');document.body.style.overflow='hidden'}
-    document.querySelectorAll('[data-page]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();show(Number(a.dataset.page))}));
-    document.getElementById('close').onclick=()=>{modal.classList.remove('open');document.body.style.overflow=''};document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=>show(current+1);modal.addEventListener('click',e=>{if(e.target===modal)document.getElementById('close').click()});document.addEventListener('keydown',e=>{if(!modal.classList.contains('open'))return;if(e.key==='Escape')document.getElementById('close').click();if(e.key==='ArrowLeft')show(current-1);if(e.key==='ArrowRight')show(current+1)});
+    const pageNames = ['TigTray', 'Wind Turbine', 'Mobile Robot', 'Mini Mailbox', 'Wall-Mounted Hanger', 'Toyota Scion FR-S X-Pipe Exhaust Modification', 'Reaction Game', 'Wireless Charging', 'Door Handle Assembly'];
+    let currentPage = 1;
+    let viewerScale = 1;
+    const viewer = document.getElementById('viewer');
+    const viewerImg = document.getElementById('viewer-img');
+    const viewerCaption = document.getElementById('viewer-caption');
+
+    function switchView(id, updateHash = true) {
+      const target = document.getElementById(id) ? id : 'about';
+      document.querySelectorAll('.page-view').forEach(view => {
+        const active = view.id === target;
+        view.classList.toggle('active', active);
+        view.hidden = !active;
+      });
+      document.querySelectorAll('[data-view-target]').forEach(button => button.classList.toggle('active', button.dataset.viewTarget === target));
+      if (updateHash) history.replaceState(null, '', '#' + target);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showPage(number) {
+      currentPage = Math.max(1, Math.min(9, number));
+      viewerScale = 1;
+      viewerImg.src = `assets/page-${currentPage}.png`;
+      viewerImg.alt = `${pageNames[currentPage - 1]} portfolio page`;
+      viewerImg.style.transform = 'scale(1)';
+      viewerCaption.textContent = `${String(currentPage).padStart(2, '0')} · ${pageNames[currentPage - 1]} · Portfolio page ${currentPage} of 9`;
+      viewer.classList.add('open');
+      document.body.classList.add('modal-open');
+    }
+
+    document.querySelectorAll('[data-view-target]').forEach(button => button.addEventListener('click', () => switchView(button.dataset.viewTarget)));
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => showPage(Number(card.dataset.page)));
+      card.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showPage(Number(card.dataset.page)); } });
+    });
+    document.getElementById('viewer-close').addEventListener('click', () => { viewer.classList.remove('open'); document.body.classList.remove('modal-open'); });
+    document.getElementById('viewer-prev').addEventListener('click', () => showPage(currentPage - 1));
+    document.getElementById('viewer-next').addEventListener('click', () => showPage(currentPage + 1));
+    document.getElementById('zoom-out').addEventListener('click', () => { viewerScale = Math.max(.6, viewerScale - .15); viewerImg.style.transform = `scale(${viewerScale})`; });
+    document.getElementById('zoom-in').addEventListener('click', () => { viewerScale = Math.min(2.5, viewerScale + .15); viewerImg.style.transform = `scale(${viewerScale})`; });
+    document.getElementById('print-page').addEventListener('click', () => { const printWindow = window.open('', '_blank', 'width=900,height=700'); if (!printWindow) return; printWindow.document.write(`<title>${pageNames[currentPage - 1]}</title><style>body{margin:0;display:grid;place-items:center;min-height:100vh}img{max-width:100%;max-height:100vh}</style><img src="assets/page-${currentPage}.png" onload="window.print();window.close()">`); printWindow.document.close(); });
+    viewer.addEventListener('click', event => { if (event.target === viewer) document.getElementById('viewer-close').click(); });
+    document.addEventListener('keydown', event => { if (!viewer.classList.contains('open')) return; if (event.key === 'Escape') document.getElementById('viewer-close').click(); if (event.key === 'ArrowLeft') showPage(currentPage - 1); if (event.key === 'ArrowRight') showPage(currentPage + 1); });
+    const initialView = location.hash.replace('#', '');
+    switchView(initialView || 'about', false);
   </script>
 </body>
 </html>
